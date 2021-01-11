@@ -1,0 +1,54 @@
+﻿@model IEnumerable<IceBear.Data.EF.Cours>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="data-table">
+    <h2>Course List</h2>
+
+    <p class="button">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th id="index-style">
+                @Html.DisplayNameFor(model => model.NameOfCourse)
+            </th>
+            <th id="index-style">
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td id="index-style">
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td id="index-style">
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    <ul class="crud">
+                        <li>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Details", "Details", new { id = item.CourseId })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="button " id="back-button">
+        @Html.ActionLink("Back to Home", "Index", "Home")
+    </div>
+
+</div>

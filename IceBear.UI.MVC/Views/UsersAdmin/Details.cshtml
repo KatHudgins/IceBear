@@ -4,42 +4,39 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details.</h2>
+<div class="detail-form">
+    <h2 id="form-title">Details</h2>
 
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-    </dl>
+    <h4>
+        @Html.DisplayFor(model => model.UserName)
+    </h4>
+
+    <h3>List of roles for this user</h3>
+
+    <div class="form-content">
+
+        @if (ViewBag.RoleNames.Count == 0)
+        {
+            <p>No roles found for this user.</p>
+        }
+
+
+            @foreach (var item in ViewBag.RoleNames)
+            {
+                <ul>
+                    <li>
+                        @item
+                    </li>
+                </ul>
+            }
+
+        <p class="button " id="detail-edit">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+        </p>
+    </div>
+    <p class="button " id="back-button">
+        @Html.ActionLink("Cancel", "Index")
+    </p>
 </div>
-<h4>List of roles for this user</h4>
-@if (ViewBag.RoleNames.Count == 0)
-{
-    <hr />
-    <p>No roles found for this user.</p>
-}
-
-<table class="table">
-
-    @foreach (var item in ViewBag.RoleNames)
-    {
-        <tr>
-            <td>
-                @item
-            </td>
-        </tr>
-    }
-</table>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-
 
 

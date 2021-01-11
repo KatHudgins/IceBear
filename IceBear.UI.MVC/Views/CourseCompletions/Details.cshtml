@@ -1,0 +1,33 @@
+﻿@model IceBear.Data.EF.CourseCompletion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="detail-form">
+    <h2 id="form-title">Course Completion Overview</h2>
+
+    <h4>
+        @Html.DisplayFor(model => model.Cours.CourseName)
+    </h4>
+
+    <div class="form-content">
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserDetail.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserDetail.FirstName)
+            </dd>
+
+        </dl>
+        <p class="button " id="detail-edit">
+            @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        </p>
+    </div>
+    <p class="button " id="back-button">
+        @Html.ActionLink("Cancel", "Index")
+    </p>
+</div>

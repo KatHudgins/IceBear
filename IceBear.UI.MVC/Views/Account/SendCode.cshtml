@@ -3,19 +3,30 @@
     ViewBag.Title = "Send Verification Code";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="create-form">
+    <h2 id="form-title">@ViewBag.Title</h2>
 
-@using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
-    @Html.AntiForgeryToken()
-    @Html.Hidden("rememberMe", @Model.RememberMe)
-    <div class="row">
-        <div class="col-md-8">
+    @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("rememberMe", @Model.RememberMe)
+
+        <h4></h4>
+
+        <div class="form-horizontal form-content">
             Two Factor Authentication Provider:
             @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
-            <input type="submit" value="Submit" class="btn btn-default" />
+
+                <div id="submit-button">
+                    <input type="submit" value="Submit" class="button" />
+                </div>
         </div>
+    }
+
+    <div class="button " id="back-button">
+        @Html.ActionLink("Cancel", "Index")
     </div>
-}
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

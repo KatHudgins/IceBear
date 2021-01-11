@@ -1,0 +1,268 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+
+body {
+    background-color: #c4c4c4;
+    color: #404040;
+}
+
+#header {
+    background-color: #404040;
+}
+
+.nav-menu a {
+    color: #c4c4c4;
+    font-family: 'Vast Shadow', cursive;
+}
+
+#footer .footer-top {
+    background-color: #404040;
+}
+
+    #footer .footer-top h4,
+    #footer .footer-top .footer-contact p,
+    #footer .footer-top .footer-links ul a {
+        color: #c4c4c4;
+    }
+
+
+#footer {
+    color: #c4c4c4;
+}
+
+a {
+    color: #404040;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 1.2em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(-60deg, #404040,#1C388C,#404040,#1C388C,#404040,#1C388C);
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background-image: linear-gradient(60deg, #c4c4c4,#1C388C,#c4c4c4,#1C388C,#c4c4c4,#1C388C );
+    }
+
+
+.button a {
+    color: #c4c4c4;
+}
+
+.button:hover a,
+.button:active a {
+    color: #000000;
+}
+
+.button {
+    border-top: 1px solid #b488ff;
+    background: #404040;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1c388c), to(#404040));
+    background: -webkit-linear-gradient(top, #1c388c, #404040);
+    background: -moz-linear-gradient(top, #1c388c, #404040);
+    background: -ms-linear-gradient(top, #1c388c, #404040);
+    background: -o-linear-gradient(top, #1c388c, #404040);
+    padding: .8%;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #c4c4c4;
+    font-size: 18px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+    .button:hover {
+        border-top-color: #b488ff;
+        background: #c4c4c4;
+        color: #000000;
+    }
+
+    .button:active {
+        border-top-color: #b488ff;
+        background: #b488ff;
+    }
+
+
+.table {
+    border-top: .2em solid #404040;
+}
+
+    .table th {
+        font-family: 'Vast Shadow', cursive;
+        font-weight: 100;
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #1C388C;
+        color: #c4c4c4;
+    }
+
+    .table td {
+        border-top: .2em solid #404040;
+    }
+
+.data-table {
+    border: 1em solid #404040;
+    width: 90%;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    background-color: /*#B0C1D9*/ #c4c4c4;
+    border-color: #404040;
+    padding-bottom: 5.2%;
+}
+
+    .data-table h2 {
+        text-align: center;
+        padding-top: 2%;
+        font-family: 'Trade Winds', cursive;
+        color: #1C388C;
+        font-size: 3.4em;
+    }
+
+    .data-table p {
+        float: right;
+        margin-right: 1em;
+    }
+
+.create-form,
+.edit-form,
+.delete-form,
+.detail-form {
+    border: 1em solid #404040;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 6%;
+    background-color: /*#B0C1D9*/ #c4c4c4;
+    border-color: #404040;
+    padding-bottom: 5.2%;
+}
+
+    #form-title,
+    .edit-form h3
+    {
+        text-align: center;
+        font-family: 'Trade Winds', cursive;
+        color: #1C388C;
+        font-size: 3.4em;
+    }
+
+.create-form h4,
+.edit-form h4,
+.delete-form h3,
+.detail-form h4{
+    font-family: 'Vast Shadow', cursive;
+    font-weight: 100;
+    font-size: 1.4em;
+    text-align: center;
+    background-color: #1C388C;
+    color: #c4c4c4;
+    padding: 2%;
+    border-top: .2em solid #404040;
+    border-bottom: .2em solid #404040;
+    width: 100%;
+}
+
+.delete-form h4,
+.detail-form h3{
+    font-family: 'Vast Shadow', cursive;
+    font-weight: 100;
+    font-size: 1.2em;
+    padding-top: 2%;
+    text-align: center;
+}
+
+.form-content {
+    padding: .8em 4em 2em 4em;
+    width: 100%;
+}
+
+input.button {
+    margin-top: .8em;
+    padding: .6% 4%;
+}
+
+#submit-button {
+    margin-top: .8em;
+    padding: .6% 4%;
+}
+
+#back-button {
+    float: right;
+    margin-right: 2.6%;
+    padding: .4% 6%;
+}
+
+.control-label {
+    font-family: 'Vast Shadow', cursive;
+    font-weight: 100;
+    font-size: 1em;
+    padding-top: 2%;
+    padding-right: 2%;
+}
+
+textarea {
+    min-height: 10em;
+    resize: none;
+}
+
+.float{
+    float:right;
+    width:74%;
+    margin-top:.8em;
+}
+
+.crud{
+    list-style: none;
+}
+
+    .crud li{
+padding-top:4%;    
+    }
+
+    #center{
+        text-align:center;
+    }
+
+    #index-style{
+        padding:2.6%;
+        text-align:left;
+    }
+
+    #detail-edit{
+        width:10%;
+        padding-left:2.6%;
+    }
+
+    #manage{
+width:12%;
+text-align:center;
+    }
+
+    #pw{
+        margin-bottom:.8em;
+        width:28%;
+        text-align:center;
+    }
+
+#bold {
+    border-top: .2em solid #404040;
+}

@@ -1,0 +1,54 @@
+﻿@model IceBear.Data.EF.LessonView
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="edit-form">
+    <h2 id="form-title">Manually @ViewBag.Title :</h2>
+    <h3>Lesson Observation</h3>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <h4>
+                @Html.LabelFor(model => model.UserId, "UserId", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("UserId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+            </h4>
+        </div>
+
+        <div class="form-horizontal form-content">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.LessonViewId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LessonId, "LessonId", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("LessonId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LessonId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DateViewed, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.DateViewed, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateViewed, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <div id="submit-button">
+                    <input type="submit" value="Save" class="button" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="button " id="back-button">
+        @Html.ActionLink("Cancel", "Index")
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

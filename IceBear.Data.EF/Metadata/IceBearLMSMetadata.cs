@@ -18,8 +18,8 @@ namespace IceBear.Data.EF
         public string CourseName { get; set; }
 
         [Display(Name = "Description")]
-        [StringLength(1000, ErrorMessage = "* Discription must be 1000 Characters or Less *")]
-        [UIHint("Multi-lineText")]
+        [StringLength(4000, ErrorMessage = "* Discription must be 4000 Characters or Less *")]
+        [UIHint("MultilineText")]
         [DisplayFormat(NullDisplayText = "[N/A]")]
         public string CourseDescription { get; set; }
 
@@ -27,7 +27,14 @@ namespace IceBear.Data.EF
         public bool IsActive { get; set; }
     }
     [MetadataType(typeof(CoursMetadata))]
-    public partial class Cours { }
+    public partial class Cours
+    {
+        [Display(Name = " Course Name")]
+        public string NameOfCourse
+        {
+            get { return CourseName; }
+        }
+    }
     #endregion
 
     #region CourseCompletion
@@ -70,21 +77,21 @@ namespace IceBear.Data.EF
         [Range(1, 104, ErrorMessage = ("* Values must be between 1 and 104 *"))]
         public int CourseId { get; set; }
 
-        [Display(Name = " INTRODUCTION ")]
+        [Display(Name = " INTRO. ")]
         [DisplayFormat(NullDisplayText = "[N/A]")]
-        [UIHint("Multi-lineText")]
+        [UIHint("MultilineText")]
         [StringLength(300, ErrorMessage = "* Introduction must be 300 Characters or Less *")]
         public string Introduction { get; set; }
 
         [Display(Name = " VIDEO ")]
         [DisplayFormat(NullDisplayText = "[N/A]")]
-        [UIHint("Multi-lineText")]
+        [UIHint("MultilineText")]
         [StringLength(250, ErrorMessage = "* Video URL must be 250 Characters or Less *")]
         public string VideoURL { get; set; }
 
         [Display(Name = " PDF ")]
         [DisplayFormat(NullDisplayText = "[N/A]")]
-        [UIHint("Multi-lineText")]
+        [UIHint("MultilineText")]
         [StringLength(100, ErrorMessage = "* PDF File Name must be 100 Characters or Less *")]
         public string PdfFileName { get; set; }
 

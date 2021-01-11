@@ -4,33 +4,47 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="data-table">
+    <h2>User Table</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <p class="button">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
+            <th id="index-style">
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
 
-</table>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td >
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    <ul class="crud">
+                        <li id="center">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                        </li>
+                        <li id="center">
+                            @Html.ActionLink("Details", "Details", new { id = item.Id })
+                        </li>
+                        <li id="center">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="button " id="back-button">
+        @Html.ActionLink("Back to Home", "Index","Home")
+    </div>
+
+</div>

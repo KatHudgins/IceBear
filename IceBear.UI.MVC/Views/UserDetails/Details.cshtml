@@ -1,0 +1,48 @@
+﻿@model IceBear.Data.EF.UserDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="detail-form">
+    <h2 id="form-title">User Overview</h2>
+
+    <h4>@Html.DisplayFor(model=>model.UserName)</h4>
+
+    <div class="form-content">
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AspNetUser.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.Email)
+            </dd>
+
+        </dl>
+        <p class="button " id="detail-edit">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) 
+        </p>
+    </div>
+    <p class="button " id="back-button">
+        @Html.ActionLink("Cancel", "Index")
+    </p>
+</div>
+
