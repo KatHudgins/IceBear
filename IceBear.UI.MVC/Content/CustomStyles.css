@@ -7,13 +7,16 @@ body {
 }
 
 #header {
-    background-color: #404040;
+    background-color: #000000;
 }
 
 .nav-menu a {
     color: #c4c4c4;
     font-family: 'Vast Shadow', cursive;
+    padding-bottom:2em;
 }
+
+.nav-menu
 
 #footer .footer-top {
     background-color: #404040;
@@ -175,7 +178,7 @@ a {
     text-align: center;
     background-color: #1C388C;
     color: #c4c4c4;
-    padding: 2%;
+    padding: 1.2em;
     border-top: .2em solid #404040;
     border-bottom: .2em solid #404040;
     width: 100%;
@@ -248,8 +251,9 @@ padding-top:4%;
     }
 
     #detail-edit{
-        width:10%;
+        width:4em;
         padding-left:2.6%;
+        text-align:center;
     }
 
     #manage{
@@ -265,4 +269,59 @@ text-align:center;
 
 #bold {
     border-top: .2em solid #404040;
+}
+
+/*ABOUT US*/
+#bout h2 {
+    font-family: 'Trade Winds', cursive;
+    color: #6D00FC;
+    text-decoration: underline;
+    font-size: 2.6em;
+    background-color: #000000;
+    box-shadow: 0px 0px 16px 14px #000000;
+    text-align:center;
+    margin:2.8em 0 2em 0;
+}
+#bout h3 {
+    font-family: 'Trade Winds', cursive;
+    color: #6D00FC;
+    text-decoration: underline;
+    font-size: 2.6em;
+    background-color: #000000;
+    box-shadow: 0px 0px 16px 14px #000000;
+    text-align: center;
+    padding-top:4em;
+    padding-bottom:18em;
+}
+#hellobear {
+    float: right;
+    box-shadow: 0px 0px 1.2em 1.4em #000000;
+}
+
+.about .content h3 {
+    font-family: 'Vast Shadow', cursive;
+    font-weight: 200;
+    font-size: 1.4em;
+    padding-top: 2%;
+}
+
+section.about{
+    margin-bottom:4em;
+}
+
+#choose {
+    padding-top: .4em;
+    font-family: 'Vast Shadow', cursive;
+    color:#000000;
+    font-weight:100;
+}
+
+#choose-us {
+    box-shadow: 0px 0px 1.2em 1.4em #000000;
+    background-color: #c4c4c4;
+}
+
+img{
+    max-width: 750px;
+    max-height:563px;
 }

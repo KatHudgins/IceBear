@@ -20,7 +20,7 @@
             </dt>
 
             <dd>
-                <iframe id="ytplayer" type="text/html" width="640" height="360" src="@Model.VideoURL" frameborder="0"></iframe>
+                <img src="~/Content/assets/img/intro/@Model.Introduction" alt="@Model.Introduction" />
             </dd>
 
             <dt>
@@ -36,7 +36,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.PdfFileName)
+                <a href="@Url.Content("~/Content/assets/img/pdf/" + @Model.PdfFileName)" target="_blank"> View Document </a>
             </dd>
 
             <dt>

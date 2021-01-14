@@ -10,17 +10,17 @@ using IceBear.Data.EF;
 
 namespace IceBear.UI.MVC.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class CoursController : Controller
     {
         private IceBearLMSEntities db = new IceBearLMSEntities();
-
+        [Authorize(Roles = "Admin,Manager, Employee")]
         // GET: Cours
         public ActionResult Index()
         {
             return View(db.Courses.ToList());
         }
-
+        [Authorize(Roles = "Admin,Manager")]
         // GET: Cours/Details/5
         public ActionResult Details(int? id)
         {

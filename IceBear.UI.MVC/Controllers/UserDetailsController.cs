@@ -10,7 +10,7 @@ using IceBear.Data.EF;
 
 namespace IceBear.UI.MVC.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class UserDetailsController : Controller
     {
         private IceBearLMSEntities db = new IceBearLMSEntities();

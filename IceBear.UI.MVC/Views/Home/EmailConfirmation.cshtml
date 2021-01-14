@@ -1,0 +1,29 @@
+﻿@model IceBear.UI.MVC.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "EmailConfirmation";
+}
+
+<div class="detail-form">
+    <h2 id="form-title">Email Confirmation</h2>
+
+    <h4>Your Message has been Sent Successfully.<br />  Thank you! </h4>
+
+    <div class="form-content">
+        <dl class="dl-horizontal ">
+
+            <dt>@Html.DisplayNameFor(model => model.Subject)</dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Subject)
+            </dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Message)</dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Message)
+            </dd>
+
+        </dl>
+    </div>
+</div>

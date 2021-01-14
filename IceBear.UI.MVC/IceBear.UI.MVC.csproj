@@ -182,6 +182,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,29 +190,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\style.css" />
-    <Content Include="Content\assets\img\about.jpg" />
-    <Content Include="Content\assets\img\apple-touch-icon.png" />
-    <Content Include="Content\assets\img\course-1.jpg" />
-    <Content Include="Content\assets\img\course-2.jpg" />
-    <Content Include="Content\assets\img\course-3.jpg" />
-    <Content Include="Content\assets\img\course-details-tab-1.png" />
-    <Content Include="Content\assets\img\course-details-tab-2.png" />
-    <Content Include="Content\assets\img\course-details-tab-3.png" />
-    <Content Include="Content\assets\img\course-details-tab-4.png" />
-    <Content Include="Content\assets\img\course-details-tab-5.png" />
-    <Content Include="Content\assets\img\course-details.jpg" />
-    <Content Include="Content\assets\img\events-1.jpg" />
-    <Content Include="Content\assets\img\events-2.jpg" />
-    <Content Include="Content\assets\img\favicon.png" />
-    <Content Include="Content\assets\img\hero-bg.jpg" />
-    <Content Include="Content\assets\img\testimonials\testimonials-1.jpg" />
-    <Content Include="Content\assets\img\testimonials\testimonials-2.jpg" />
-    <Content Include="Content\assets\img\testimonials\testimonials-3.jpg" />
-    <Content Include="Content\assets\img\testimonials\testimonials-4.jpg" />
-    <Content Include="Content\assets\img\testimonials\testimonials-5.jpg" />
-    <Content Include="Content\assets\img\trainers\trainer-1.jpg" />
-    <Content Include="Content\assets\img\trainers\trainer-2.jpg" />
-    <Content Include="Content\assets\img\trainers\trainer-3.jpg" />
+    <Content Include="Content\assets\img\band-aid.jpg" />
+    <Content Include="Content\assets\img\hello bear.1.jpg" />
+    <Content Include="Content\assets\img\intro\noImage.jpg" />
+    <Content Include="Content\assets\img\troy-bridges--ru-WEZmA4Q-unsplash.jpg" />
     <Content Include="Content\assets\js\main.js" />
     <Content Include="Content\assets\vendor\animate.css\animate.compat.css" />
     <Content Include="Content\assets\vendor\animate.css\animate.css" />
@@ -252,7 +234,6 @@
     <Content Include="Content\assets\vendor\remixicon\remixicon.svg" />
     <Content Include="Content\assets\vendor\remixicon\remixicon.symbol.svg" />
     <Content Include="Content\assets\vendor\waypoints\jquery.waypoints.min.js" />
-    <Content Include="Content\assets\img\ICEBEAR ELECTRIC Logo %280%29.jpg" />
     <Content Include="Content\CustomStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -359,6 +340,11 @@
     <Content Include="Content\assets\vendor\remixicon\remixicon.ttf" />
     <Content Include="Content\assets\vendor\remixicon\remixicon.woff" />
     <Content Include="Content\assets\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Content\assets\img\pdf\DCMotor_AhmedAlnaib.pdf" />
+    <Content Include="Content\assets\img\pdf\Instrumentation.pdf" />
+    <Content Include="Content\assets\img\pdf\Lighting Controls.pdf" />
+    <Content Include="Content\assets\img\pdf\Photovoltaic.pdf" />
+    <Content Include="Content\assets\img\pdf\PLC.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -383,8 +369,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -467,9 +451,12 @@
     <Content Include="Views\UsersAdmin\Details.cshtml" />
     <Content Include="Views\UsersAdmin\Edit.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\Home\EmailConfirmation.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\assets\img\video\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

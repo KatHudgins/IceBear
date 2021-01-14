@@ -7,21 +7,36 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using IceBear.Data.EF;
+using Microsoft.AspNet.Identity;
 
 namespace IceBear.UI.MVC.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class CourseCompletionsController : Controller
     {
         private IceBearLMSEntities db = new IceBearLMSEntities();
+        [Authorize(Roles = "Admin,Manager, Employee")]
 
         // GET: CourseCompletions
         public ActionResult Index()
         {
-            var courseCompletions = db.CourseCompletions.Include(c => c.Cours).Include(c => c.UserDetail);
-            return View(courseCompletions.ToList());
-        }
 
+            //All Completions
+            var courseCompletions = db.CourseCompletions.Include(c => c.Cours).Include(c => c.UserDetail);
+
+            //get current user
+            string currentUserID = User.Identity.GetUserId();
+
+            //check user role - if user is Employee
+            //create a query for ONLY that employee completions
+            //var emp = db.AspNetRoles.Where(x => x.Name.Contains("Employee"));
+            if (User.IsInRole("Employee"))
+            {
+                courseCompletions = courseCompletions.Where(x => x.UserId == currentUserID);
+            }
+            //return view
+            return View(courseCompletions);
+        }
         [Authorize(Roles = "Admin,Manager")]
         // GET: CourseCompletions/Details/5
         public ActionResult Details(int? id)
@@ -38,7 +53,6 @@ namespace IceBear.UI.MVC.Controllers
             return View(courseCompletion);
         }
 
-        [Authorize(Roles = "Admin")]
         // GET: CourseCompletions/Create
         public ActionResult Create()
         {
@@ -47,7 +61,6 @@ namespace IceBear.UI.MVC.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
         // POST: CourseCompletions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -67,7 +80,6 @@ namespace IceBear.UI.MVC.Controllers
             return View(courseCompletion);
         }
 
-        [Authorize(Roles = "Admin")]
         // GET: CourseCompletions/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -85,7 +97,6 @@ namespace IceBear.UI.MVC.Controllers
             return View(courseCompletion);
         }
 
-        [Authorize(Roles = "Admin")]
         // POST: CourseCompletions/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -104,7 +115,6 @@ namespace IceBear.UI.MVC.Controllers
             return View(courseCompletion);
         }
 
-        [Authorize(Roles = "Admin")]
         // GET: CourseCompletions/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -120,7 +130,6 @@ namespace IceBear.UI.MVC.Controllers
             return View(courseCompletion);
         }
 
-        [Authorize(Roles = "Admin")]
         // POST: CourseCompletions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -8,61 +8,63 @@
     <h2 id="form-title">@ViewBag.Title</h2>
 
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Edit","Lessons",FormMethod.Post, new { @enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
+        <h4>LESSON</h4>
+
+    <div class="form-horizontal form-content">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.LessonId)
+        @Html.HiddenFor(model => model.Introduction)
+
         <div class="form-group">
-            <h4>
                 @Html.LabelFor(model => model.LessonTitle, htmlAttributes: new { @class = "control-label" })
                 @Html.EditorFor(model => model.LessonTitle, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.LessonTitle, "", new { @class = "text-danger" })
-            </h4>
         </div>
 
-        <div class="form-horizontal form-content">
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourseId, "COURSE", htmlAttributes: new { @class = "control-label" })
+            @Html.DropDownList("CourseId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CourseId, "", new { @class = "text-danger" })
+        </div>
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.LessonId)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Introduction, htmlAttributes: new { @class = "control-label" })
+            @*@Html.EditorFor(model => model.Introduction, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Introduction, "", new { @class = "text-danger" })*@                
+            Existing Image: <img width="150" src="@Url.Content("~/Content/assets/img/intro/" + Model.Introduction)" /><br /><br />Change Image (No Images Taller than 350px): <input type="file" style="display:inline" name="Introduction" />
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.CourseId, "CourseId", htmlAttributes: new { @class = "control-label" })
-                @Html.DropDownList("CourseId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CourseId, "", new { @class = "text-danger" })
-            </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.VideoURL, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.VideoURL, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.VideoURL, "", new { @class = "text-danger" })
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Introduction, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Introduction, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Introduction, "", new { @class = "text-danger" })
-            </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PdfFileName, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.PdfFileName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PdfFileName, "", new { @class = "text-danger" })
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.VideoURL, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.VideoURL, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.VideoURL, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.PdfFileName, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.PdfFileName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PdfFileName, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label" })
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsActive)
-                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div id="submit-button">
-                    <input type="submit" value="Save" class="button" />
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label" })
+            <div class="checkbox">
+                @Html.EditorFor(model => model.IsActive)
+                @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            <div id="submit-button">
+                <input type="submit" value="Save" class="button" />
+            </div>
+        </div>
+    </div>
     }
 
     <div class="button " id="back-button">

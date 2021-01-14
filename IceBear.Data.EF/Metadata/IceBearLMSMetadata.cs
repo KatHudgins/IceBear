@@ -121,7 +121,9 @@ namespace IceBear.Data.EF
         public System.DateTime DateViewed { get; set; }
     }
     [MetadataType(typeof(LessonViewMetadata))]
-    public partial class LessonView { }
+    public partial class LessonView {
+
+    }
     #endregion
 
     #region UserDetail
